@@ -1,42 +1,136 @@
 #root {
-  max-width: 1280px;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.nav-button { 
+  background-color: #ffffff; /* 綠色背景 */ 
+  color: rgb(0, 0, 0); /* 白色文字 */ 
+  padding: 15px 20px; /* 內邊距 */ 
+  text-align: center; /* 文字居中 */ 
+  text-decoration: none; /* 移除下劃線 */ 
+  display: inline-block; /* 行內塊元素 */ 
+  font-size: 16px; /* 字體大小 */ 
+  margin: 4px 2px; /* 外邊距 */ 
+  border-radius: 12px; /* 圓角 */ 
+  transition: background-color 0.3s; /* 背景色過渡效果 */   
+  line-height: 20px;
+} 
+.nav-button:hover { 
+  background-color: #949494; /* 懸停時背景色 */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.botton{
+  background-color: #ea1f1f;
+  display: flex; /* 使用Flexbox居中內容 */ 
+  justify-content: center; 
+  align-items: center;
+  box-sizing: border-box;
+}
+.botton button { 
+  background-color: #fff; /* 按鈕白色背景 */ 
+  color: #000; /* 按鈕黑色文字 */ 
+  font-size: 16px; 
+  padding: 16px; 
+  border: none; 
+  cursor: pointer; 
+  border-radius: 12px; 
+  transition: background-color 0.3s; } 
+
+  .botton button:hover { 
+    background-color: #858585; /* 按鈕懸停背景 */
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+nav ul li {
+  display: inline;
 }
 
-.card {
-  padding: 2em;
+.dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.read-the-docs {
-  color: #888;
+.dropdown button {
+  margin-right: 10px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;/*下拉選單的背景顏色*/
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: rgb(0, 0, 0);/*下拉選單的字體顏色*/
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #b1b0b0;/*下拉選單當游標移到相對位置的背景顏色*/
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropbtn {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+.home {
+  margin-top: 0vh;
+  background-color: #f0f0f0;
+  padding: 0px; 
+  box-sizing: border-box;
+}
+
+.cover {
+background-color: #333;
+color:white;
+padding: 20px;
+height: 570px;
+
+}
+
+#rule1 {
+  margin-top: 0vh;
+  padding: 20px;
+  height: 655px;
+  background-color: #e0e0e0;
+}
+#rule2 {
+  margin-top: 0vh;
+  padding: 20px;
+  height: 655px;
+  background-color: #c7c4c4;
+}
+#properties {
+  margin-top: 0vh;
+  padding: 20px;
+  height: 655px;
+  background: #949393;
 }
