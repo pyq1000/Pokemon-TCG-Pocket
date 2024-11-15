@@ -24,6 +24,7 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  font-family: "Microsoft JhengHei";
   margin: 8px 4px;
   border-radius: 25px;
   transition: var(--transition);
@@ -39,7 +40,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.botton {
+.button {
   background: linear-gradient(135deg, #e74c3c, #c0392b);
   padding: 10px;
   height: 80px;
@@ -51,13 +52,14 @@
   top: 0;
   width: 100%;
   z-index: 1000;
+
 }
 
-.botton button {
+.button button {
   background-color: white;
   color: var(--text-color);
   font-size: 16px;
-  font-family: "華康麗黑體";
+
   padding: 14px 28px;
   border: none;
   cursor: pointer;
@@ -67,7 +69,7 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.botton button:hover {
+.button button:hover {
   background-color: var(--accent-color);
   color: white;
   transform: scale(1.05);
@@ -130,27 +132,26 @@ nav ul {
   animation: fadeIn 0.3s ease;
 }
 
+/* 背景圖不動 */
 .home {
   background-color: #000000;
   padding: 40px;
   box-sizing: border-box;
   padding-top: 100px;
-}
+  background-image: url('');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 
-/* 共同的容器樣式 */
-.content-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
 }
 
 /* Cover 區塊 */
 .cover {
   background-color: rgba(255, 255, 255, 0.9);
   color: var(--text-color);
-  padding: 40px;
-  height: 540px;
-  border-radius: 20px 20px 0 0;
+  padding: 28px;
+  height: auto;
+  border-radius: 20px;
   /* 只保留上方圓角 */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
@@ -159,18 +160,19 @@ nav ul {
 }
 
 .cover h1 {
-  font-size: 100px;
-  font-family: "cursive";
+  font-family: 'SilverFont', sans-serif;
+  font-size: 150px;
 }
 
 /* 封面按鈕區塊 */
 .scroll-button {
-  margin: 0 10px;
+  margin: 0 100px;
   /* 設置按鈕間的水平間距 */
+  margin-bottom: 90px;
   background-color: var(--secondary-color);
   color: var(--text-color);
   padding: 12px 24px;
-
+  font-size: 45px
 }
 
 /* Rule 區塊 */
@@ -187,8 +189,8 @@ nav ul {
   box-sizing: border-box;
   border: 0;
   /* 添加邊框 */
-  border-radius: 0;
-  background-color: #a7a3a3;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
   /* 設置背景顏色 */
 }
 
@@ -196,10 +198,11 @@ nav ul {
   grid-area: title;
   align-self: start;
   /* 將標題置頂 */
-  margin: 0;
-  padding-bottom: 0;
+  margin: 10px;
   width: 100%;
   text-align: center;
+  font-family: 'SilverFont', sans-serif;
+  font-size: 100px;
 }
 
 .rules {
@@ -230,13 +233,13 @@ nav ul {
 
 /* Properties 區塊 */
 #properties {
-  background: linear-gradient(135deg, #949393, #767676);
-  margin: 0;
+  background: rgba(255, 255, 255, 0.9);
+  margin: 10px;
   /* 移除所有邊距 */
   padding: 40px;
   height: 655px;
   transition: var(--transition);
-  border-radius: 0 0 20px 20px;
+  border-radius: 20px;
   /* 只保留下方圓角 */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -258,13 +261,6 @@ nav ul {
   /* 框框的高度 */
 }
 
-/* 添加滑鼠懸停效果（可選） */
-.cover:hover,
-#rule:hover,
-#properties:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-}
 
 /* 響應式設計 */
 @media (max-width: 768px) {
@@ -294,12 +290,17 @@ nav ul {
   background-color: rgba(255, 255, 255, 0.9);
   color: var(--text-color);
   padding: 40px;
-  height: 570px;
+  height: flex;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   margin-bottom: 0;
   /* 移除底部邊距 */
+}
+
+.page1 h1 {
+  font-family: 'SilverFont';
+  font-size: 100px;
 }
 
 .gallery1 {
@@ -412,54 +413,115 @@ nav ul {
   margin-bottom: 0;
 }
 
-/* Gallery.css */
+/* 圖片網格 */
 .image-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(52, 1fr);
-  grid-gap: 1rem;
+  /* 最多六張圖片一行 */
+  gap: 15px;
+  padding: 20px;
 }
 
-.image-grid img {
+/* 每個圖片容器 */
+.image-container {
+  display: flex;
+  flex-direction: column;
+  /* 使圖片和文字垂直排列 */
+  align-items: center;
+  /* 使圖片和文字居中 */
+}
+
+/* 圖片樣式 */
+.image-trigger {
   width: 100%;
   height: auto;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-.image-modal {
-  display: none;
+/* 圖片下方的文字 */
+.image-caption {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+}
+
+/* 懸浮視窗 */
+.modal-overlay {
   position: fixed;
-  z-index: 999;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  max-width: 90%;
+  max-height: 90%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.8);
+  position: relative;
 }
 
-.image-modal-content {
-  display: block;
-  margin: 15% auto;
-  max-width: 80%;
-  max-height: 80%;
+.modal-layout {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.image-modal-content img {
-  width: 100%;
-  height: auto;
+.modal-layout img {
+  max-width: 50%;
+  max-height: 70vh;
+  border-radius: 10px;
+}
+
+.description {
+  flex: 1;
+  text-align: left;
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.description h2 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #000;
+}
+
+.description p {
+  margin: 0;
 }
 
 .close-button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #ff5c5c;
   color: white;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease-in-out;
+  display: block;
+  margin-left: auto;
 }
 
-.close-button:hover,
-.close-button:focus {
-  color: #aaa;
-  text-decoration: none;
-  cursor: pointer;
+.close-button:hover {
+  background: #ff1c1c;
+}
+
+@font-face {
+  font-family: 'SilverFont';
+  src: url('../src/assets/font/Silver.ttf') format('truetype');
 }

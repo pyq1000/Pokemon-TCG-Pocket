@@ -1,19 +1,19 @@
 import React from 'react';
 import { HashRouter as Router, Route, Routes, Link, useNavigate } from 'react-router-dom';
-import Gallery from './pages/Page1';
-import Profile from './pages/Page2';
-import Settings from './pages/Page3';
-import Feedback from './pages/Page4';
-import Gallery1 from './Gallerys/Gallery1';
-import Gallery2 from './Gallerys/Gallery2';
-import Gallery3 from './Gallerys/Gallery3';
-import Gallery4 from './Gallerys/Gallery4';
-import Gallery5 from './Gallerys/Gallery5';
-import Gallery6 from './Gallerys/Gallery6';
-import Gallery7 from './Gallerys/Gallery7';
-import Gallery8 from './Gallerys/Gallery8';
-import Gallery9 from './Gallerys/Gallery9';
-import Gallery10 from './Gallerys/Gallery10';
+import Gallery from './Page1';
+import Profile from './Page2';
+import Settings from './Page3';
+import Feedback from './Page4';
+import Gallery1 from './Gallery1';
+import Gallery2 from './Gallery2';
+import Gallery3 from './Gallery3';
+import Gallery4 from './Gallery4';
+import Gallery5 from './Gallery5';
+import Gallery6 from './Gallery6';
+import Gallery7 from './Gallery7';
+import Gallery8 from './Gallery8';
+import Gallery9 from './Gallery9';
+import Gallery10 from './Gallery10';
 import './App.css';
 
 const App: React.FC = () => (
@@ -48,13 +48,13 @@ const NavMenu: React.FC = () => {
 
   return (
     <nav>
-      <div className='botton'>
+      <div className='button'>
         <ul>
           <li><Link to="/" className='nav-button'>首頁</Link></li>
           <li className="dropdown">
             <button className="nav-button dropbtn" onClick={handleGalleryClick}>圖鑑</button>
             <div className="dropdown-content">
-              <Link to="/gallery1"><image></image>超系卡組</Link>
+              <Link to="/gallery1">超系卡組</Link>
               <Link to="/gallery2"><image></image>電系卡組</Link>
               <Link to="/gallery3"><image></image>火系卡組</Link>
               <Link to="/gallery4"><image></image>鬥系卡組</Link>
