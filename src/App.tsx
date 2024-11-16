@@ -3,7 +3,6 @@ import { HashRouter as Router, Route, Routes, Link, useNavigate } from 'react-ro
 import Gallery from './Page1';
 import Profile from './Page2';
 import Settings from './Page3';
-import Feedback from './Page4';
 import Gallery1 from './Gallery1';
 import Gallery2 from './Gallery2';
 import Gallery3 from './Gallery3';
@@ -15,6 +14,9 @@ import Gallery8 from './Gallery8';
 import Gallery9 from './Gallery9';
 import Gallery10 from './Gallery10';
 import './App.css';
+import Property1 from './assets/pokemon tcg/圖示/屬性/屬性表.png'
+
+import Testpage from './Testpage';
 
 const App: React.FC = () => (
   <Router>
@@ -34,7 +36,7 @@ const App: React.FC = () => (
       <Route path="/gallery10" element={<Gallery10 />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/settings" element={<Settings />} />
-      <Route path="/feedback" element={<Feedback />} />
+      <Route path="/test" element={<Testpage />}/>
     </Routes>
   </Router>
 );
@@ -68,7 +70,7 @@ const NavMenu: React.FC = () => {
           </li>
           <li><Link to="/profile" className='nav-button'>卡包資訊</Link></li>
           <li><Link to="/settings" className='nav-button'>卡組T表</Link></li>
-          <li><Link to="/feedback" className='nav-button'>問題回報</Link></li>
+          <li><Link to="/test" className='nav-button'>test</Link></li>
         </ul>
       </div>
     </nav>
@@ -131,11 +133,8 @@ const Home: React.FC = () => {
         </div>
       </div >
       <div id="properties">
-        <h1>屬性</h1>
-        <div className='conflict'>
-          <h2>屬性相剋</h2>
-          <p>這裡是屬性部分的內容。</p>
-        </div>
+        <h1>屬性相剋</h1>
+          <img src={Property1} alt='屬性表' className='Property1'/>
       </div>
     </div >
 

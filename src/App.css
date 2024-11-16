@@ -145,6 +145,7 @@ nav ul {
 
 }
 
+
 /* Cover 區塊 */
 .cover {
   background-color: rgba(255, 255, 255, 0.9);
@@ -155,7 +156,7 @@ nav ul {
   /* 只保留上方圓角 */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
-  margin-bottom: 0;
+  margin-bottom:70px;
   /* 移除底部邊距 */
 }
 
@@ -182,37 +183,44 @@ nav ul {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto 1fr 1fr;
   gap: 20px;
-  /* 調整區塊間距 */
-  height: 100vh;
-  /* 設置高度 */
-  padding: 20px;
+  min-height: 100vh; /* 改為最小高度 */
+  max-height: 100vh;
+  padding: 80px 20px 0px 20px;
   box-sizing: border-box;
   border: 0;
-  /* 添加邊框 */
   border-radius: 20px;
   background-color: rgba(255, 255, 255, 0.9);
-  /* 設置背景顏色 */
+  margin-bottom: 70px;
+  overflow: auto;
 }
 
 #rule h1 {
   grid-area: title;
   align-self: start;
-  /* 將標題置頂 */
   margin: 10px;
+  margin-bottom: -45px;
   width: 100%;
   text-align: center;
   font-family: 'SilverFont', sans-serif;
-  font-size: 100px;
+  font-size: clamp(50px, 8vw, 100px);
 }
 
 .rules {
-  /* 規則 */
   grid-area: rules;
   background-color: #f9f9f9;
   border-radius: 20px;
-  margin: 0;
+  margin-bottom: 20px;
   padding: 0;
   border: 1px solid #ccc;
+  text-align: left;
+  min-height: 0;
+  overflow: auto;
+}
+
+.rules h2 {
+  text-align: center;
+  font-size: clamp(24px, 4vw, 40px);
+  margin: 0;
 }
 
 .status {
@@ -221,14 +229,56 @@ nav ul {
   border-radius: 20px;
   padding: 0;
   border: 1px solid #ccc;
+  line-height: 0.9;
+  min-height: 0;
+  overflow: auto;
+}
+
+.status h2 {
+  text-align: center;
+  font-size: clamp(24px, 4vw, 40px);
+  margin: 0;
+  padding: 5px;
 }
 
 .win {
   grid-area: win;
   background-color: #dcdcdc;
   border-radius: 20px;
+  margin-bottom: 20px;
   padding: 0;
   border: 1px solid #ccc;
+  line-height: 1;
+  min-height: 0;
+  overflow: auto;
+}
+
+.win h2 {
+  text-align: center;
+  font-size: clamp(24px, 4vw, 40px);
+  margin: 0;
+  padding: 5px;
+}
+
+/* 添加媒體查詢處理小螢幕 */
+@media screen and (max-width: 768px) {
+  #rule {
+    grid-template-areas: 
+      "title"
+      "rules"
+      "status"
+      "win";
+    grid-template-columns: 1fr;
+    padding: 40px 10px;
+  }
+  
+  #rule h1 {
+    margin-bottom: -20px;
+  }
+  
+  .rules, .status, .win {
+    margin-bottom: 10px;
+  }
 }
 
 /* Properties 區塊 */
@@ -237,7 +287,7 @@ nav ul {
   margin: 10px;
   /* 移除所有邊距 */
   padding: 40px;
-  height: 655px;
+  height: auto;
   transition: var(--transition);
   border-radius: 20px;
   /* 只保留下方圓角 */
@@ -246,20 +296,23 @@ nav ul {
   z-index: 0;
 }
 
-.conflict {
-  background-color: #f9f9f9;
-  border-radius: 20px;
+.Property1 {
+  width: 400px;
+  min-width: 50px;
+  height: auto;
   border: 1px solid #ccc;
-  /* 邊框顏色和粗細 */
-  padding: 0;
-  /* 內邊距 */
-  margin-top: 0;
-  /* 與上方內容的間距 */
-  width: 100%;
-  /* 框框的寬度 */
-  height: 550px;
-  /* 框框的高度 */
+  border-radius: 10px;
+  margin-top: 80px;
+  margin-bottom: 20px;
+
+  /* 新增 Flexbox 置中設定 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto; /* 水平置中 */
+  margin-right: auto; /* 水平置中 */
 }
+
 
 
 /* 響應式設計 */
@@ -448,22 +501,22 @@ nav ul {
   font-weight: bold;
 }
 
-/* 懸浮視窗 */
+/* 背景遮罩 */
 .modal-overlay {
-  position: fixed;
+  position: fixed; /* 固定定位 */
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* 半透明黑色背景 */
+  display: flex; /* 使用彈性布局 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  z-index: 999; /* 確保在其他元素之上 */
 }
 
 .modal-content {
-  background: #fff;
+  background: #000000e5;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -476,6 +529,7 @@ nav ul {
 .modal-layout {
   display: flex;
   align-items: center;
+  flex-direction: column;
   gap: 20px;
 }
 
@@ -491,6 +545,7 @@ nav ul {
   font-size: 16px;
   color: #333;
   line-height: 1.5;
+  white-space: pre-wrap;
 }
 
 .description h2 {
@@ -524,4 +579,37 @@ nav ul {
 @font-face {
   font-family: 'SilverFont';
   src: url('../src/assets/font/Silver.ttf') format('truetype');
+}
+.fire {
+  display: flex; /* 使用 Flexbox */
+  width: 100%; /* 設定容器寬度 */
+  height: 300px; /* 設定容器高度 */
+  border: 1px solid #ccc; /* 外框樣式 */
+}
+
+.left-block {
+  flex: 1; /* 左區塊占 1 倍空間 */
+  background-color: #f9f9f9;
+  padding: 10px;
+  text-align: center;
+}
+
+.right-block {
+  flex: 1; /* 右區塊占 1 倍空間 */
+  display: flex;
+  flex-direction: column; /* 垂直排列內部的右上和右下區塊 */
+}
+
+.top-right {
+  flex: 1; /* 右上區塊占 1 倍空間 */
+  background-color: #cce7ff;
+  padding: 10px;
+  text-align: center;
+}
+
+.bottom-right {
+  flex: 1; /* 右下區塊占 1 倍空間 */
+  background-color: #ffcce7;
+  padding: 10px;
+  text-align: center;
 }
