@@ -133,7 +133,7 @@ const Home: React.FC = () => {
         </div>
       </div >
       <div id="properties">
-        <h1>屬性相剋</h1>
+        <h1>屬性</h1>
           <img src={Property1} alt='屬性表' className='Property1'/>
       </div>
     </div >
