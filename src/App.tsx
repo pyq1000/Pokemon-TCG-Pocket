@@ -3,20 +3,9 @@ import { HashRouter as Router, Route, Routes, Link, useNavigate } from 'react-ro
 import Gallery from './Page1';
 import Profile from './Page2';
 import Settings from './Page3';
-import Gallery1 from './Gallery1';
-import Gallery2 from './Gallery2';
-import Gallery3 from './Gallery3';
-import Gallery4 from './Gallery4';
-import Gallery5 from './Gallery5';
-import Gallery6 from './Gallery6';
-import Gallery7 from './Gallery7';
-import Gallery8 from './Gallery8';
-import Gallery9 from './Gallery9';
-import Gallery10 from './Gallery10';
 import './App.css';
-import Property1 from './assets/pokemon tcg/圖示/屬性/屬性表.png'
-
-import Testpage from './Testpage';
+import Property1 from './assets/pokemon tcg/圖示/屬性/屬性表.png';
+import Property2 from './assets/pokemon tcg/圖示/屬性/1.png';
 
 const App: React.FC = () => (
   <Router>
@@ -24,19 +13,8 @@ const App: React.FC = () => (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/gallery" element={<Gallery />} />
-      <Route path="/gallery1" element={<Gallery1 />} />
-      <Route path="/gallery2" element={<Gallery2 />} />
-      <Route path="/gallery3" element={<Gallery3 />} />
-      <Route path="/gallery4" element={<Gallery4 />} />
-      <Route path="/gallery5" element={<Gallery5 />} />
-      <Route path="/gallery6" element={<Gallery6 />} />
-      <Route path="/gallery7" element={<Gallery7 />} />
-      <Route path="/gallery8" element={<Gallery8 />} />
-      <Route path="/gallery9" element={<Gallery9 />} />
-      <Route path="/gallery10" element={<Gallery10 />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/settings" element={<Settings />} />
-      <Route path="/test" element={<Testpage />}/>
     </Routes>
   </Router>
 );
@@ -53,24 +31,9 @@ const NavMenu: React.FC = () => {
       <div className='button'>
         <ul>
           <li><Link to="/" className='nav-button'>首頁</Link></li>
-          <li className="dropdown">
-            <button className="nav-button dropbtn" onClick={handleGalleryClick}>圖鑑</button>
-            <div className="dropdown-content">
-              <Link to="/gallery1">超系卡組</Link>
-              <Link to="/gallery2"><image></image>電系卡組</Link>
-              <Link to="/gallery3"><image></image>火系卡組</Link>
-              <Link to="/gallery4"><image></image>鬥系卡組</Link>
-              <Link to="/gallery5"><image></image>草系卡組</Link>
-              <Link to="/gallery6"><image></image>水系卡組</Link>
-              <Link to="/gallery7"><image></image>惡系卡組</Link>
-              <Link to="/gallery8"><image></image>鋼鐵卡組</Link>
-              <Link to="/gallery9"><image></image>龍系卡組</Link>
-              <Link to="/gallery10"><image></image>無屬系卡組</Link>
-            </div>
-          </li>
+          <li><Link to="/gallery" className='nav-button'>圖鑑</Link></li>
           <li><Link to="/profile" className='nav-button'>卡包資訊</Link></li>
           <li><Link to="/settings" className='nav-button'>卡組T表</Link></li>
-          <li><Link to="/test" className='nav-button'>test</Link></li>
         </ul>
       </div>
     </nav>
@@ -117,9 +80,9 @@ const Home: React.FC = () => {
             <p>*進化和撤退或使用物品卡都可以解除狀態(目前沒有此物品卡)</p>
             <p>「中毒」	每回合都 -10血量</p>
             <p>「灼傷」	每回合都 -20血量，投硬幣正面解除反面繼續燒</p>
-            <p>「睡眠」	無法使用招式和撤退，投硬幣正面解除反面繼續睡</p>
-            <p>「麻痺」	無法使用招式和撤退，度過一個自己回合結束即可解除</p>
-            <p>「混亂」	使用招式時，投硬幣正面成功使用招式，反面打自己 -30血量(這條還沒看過不確定)</p>
+            <p>「睡眠」	一定會中，投硬幣正面解除反面繼續睡，無法使用招式和撤退</p>
+            <p>「麻痺」	不一定會中，投硬幣正面麻痺反面沒中，無法使用招式和撤退</p>
+            <p>「混亂」	使用招式時，投硬幣正面成功使用招式，反面打自己 -30血量</p>
           </p>
         </div>
         <div className='win'>
@@ -133,8 +96,15 @@ const Home: React.FC = () => {
         </div>
       </div >
       <div id="properties">
-        <h1>屬性</h1>
-          <img src={Property1} alt='屬性表' className='Property1'/>
+        <h1>屬性相剋表</h1>
+        <div className="image-comparison">
+          <div className="image-container left">
+            <img src={Property1} alt=''/>
+          </div>
+          <div className="image-container right">
+            <img src={Property2} alt='' />
+          </div>
+        </div>
       </div>
     </div >
 
