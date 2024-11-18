@@ -1,7 +1,6 @@
 {
   "name": "pokemon-tcg-pocket",
-  "homepage": "https://pyq1000.github.io/Pokemon-TCG-Pocket/",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
