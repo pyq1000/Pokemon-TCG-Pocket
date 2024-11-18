@@ -411,7 +411,7 @@ nav ul {
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   max-width: 90%;
-  max-height: 50vh;
+  height: 50vh;
   overflow-y: hidden;
   position: relative;
   display: flex;
