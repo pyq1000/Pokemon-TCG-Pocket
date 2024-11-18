@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Route, Routes, Link, useNavigate } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes, Link} from 'react-router-dom';
 import Gallery from './Page1';
 import Profile from './Page2';
 import Settings from './Page3';
@@ -20,12 +20,6 @@ const App: React.FC = () => (
 );
 
 const NavMenu: React.FC = () => {
-  const navigate = useNavigate();
-
-  const handleGalleryClick = () => {
-    navigate('/gallery');
-  };
-
   return (
     <nav>
       <div className='button'>
@@ -99,7 +93,7 @@ const Home: React.FC = () => {
         <h1>屬性相剋表</h1>
         <div className="image-comparison">
           <div className="image-container left">
-            <img src={Property1} alt=''/>
+            <img src={Property1} alt='' />
           </div>
           <div className="image-container right">
             <img src={Property2} alt='' />

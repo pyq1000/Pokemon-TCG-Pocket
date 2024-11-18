@@ -19,7 +19,6 @@ const useDebounce = (value: any, delay: number) => {
 
 const ImageGrid: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<Image | null>(null);
-  const [scrollPosition, setScrollPosition] = useState(0);
   const modalRef = useRef<HTMLDivElement | null>(null);
 
   // 搜尋和篩選狀態
