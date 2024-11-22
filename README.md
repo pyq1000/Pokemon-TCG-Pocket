@@ -1,5 +1,8 @@
 # Pockemon-TCG Pocket
 
+## 網站連結
+https://pyq1000.github.io/Pokemon-TCG-Pocket/
+
 ## 設計概念
 
 這個網站提供了PTCG Pocket第一版本的圖鑑、隊伍及卡包資訊，讓玩家可以經由查詢本網站來知道自己目前可組出的隊伍
